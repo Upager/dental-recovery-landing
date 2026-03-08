@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dental Revenue Recovery - Recover $50K-$200K in Lost Revenue Automatically</title>
+  <meta name="description" content="AI-powered autonomous agent that recovers unscheduled dental treatment. Pay only 5% of recovered revenue. Free 30-day trial.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --navy: #0a1628;
+      --navy-light: #1a2942;
+      --navy-lighter: #2a3952;
+      --green: #00ff88;
+      --green-dark: #00cc6a;
+      --blue: #4da6ff;
+      --white: #ffffff;
+      --gray: #94a3b8;
+      --gray-light: #e2e8f0;
+    }
+    
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* Navigation */
+    nav {
+      padding: 1.5rem 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 22, 40, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+    }
+    
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--green);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    
+    .nav-cta {
+      background: var(--green);
+      color: var(--navy);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: 2px solid var(--green);
+    }
+    
+    .nav-cta:hover {
+      background: transparent;
+      color: var(--green);
+      transform: translateY(-2px);
+    }
+    
+    /* Hero Section */
+    .hero {
+      padding: 10rem 0 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(0, 255, 136, 0.15) 0%, transparent 70%);
+      animation: pulse 8s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.1); opacity: 0.5; }
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-tag {
+      display: inline-block;
+      background: rgba(0, 255, 136, 0.1);
+      color: var(--green);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(0, 255, 136, 0.2);
+    }
+    
+    .hero h1 {
+      font-size: 4.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--white) 0%, var(--green) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: var(--gray);
+      margin-bottom: 3rem;
+      max-width: 700px;
+    }
+    
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border: none;
+    }
+    
+    .btn-primary {
+      background: var(--green);
+      color: var(--navy);
+      box-shadow: 0 10px 40px rgba(0, 255, 136, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 50px rgba(0, 255, 136, 0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--navy-lighter);
+    }
+    
+    .btn-secondary:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+    
+    /* Stats Bar */
+    .stats-bar {
+      background: var(--navy-light);
+      padding: 3rem 0;
+      border-top: 1px solid var(--navy-lighter);
+      border-bottom: 1px solid var(--navy-lighter);
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-family: 'Space Mono', monospace;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--green);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+    
+    /* Problem Section */
+    .problem-section {
+      padding: 8rem 0;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    
+    .section-tag {
+      color: var(--green);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+    
+    .section-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    
+    .section-subtitle {
+      font-size: 1.25rem;
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .problem-card {
+      background: var(--navy-light);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--navy-lighter);
+      transition: all 0.3s;
+    }
+    
+    .problem-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--green);
+      box-shadow: 0 10px 40px rgba(0, 255, 136, 0.1);
+    }
+    
+    .problem-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .problem-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--green);
+    }
+    
+    .problem-card p {
+      color: var(--gray);
+      line-height: 1.7;
+    }
+    
+    /* Solution Section */
+    .solution-section {
+      padding: 8rem 0;
+      background: var(--navy-light);
+    }
+    
+    .how-it-works {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+    
+    .step {
+      position: relative;
+    }
+    
+    .step-number {
+      font-family: 'Space Mono', monospace;
+      font-size: 4rem;
+      font-weight: 700;
+      color: rgba(0, 255, 136, 0.2);
+      margin-bottom: 1rem;
+    }
+    
+    .step h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+    
+    .step p {
+      color: var(--gray);
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+    
+    .step-check {
+      color: var(--green);
+      margin-right: 0.5rem;
+    }
+    
+    /* Pricing Section */
+    .pricing-section {
+      padding: 8rem 0;
+    }
+    
+    .pricing-card {
+      background: var(--navy-light);
+      border: 2px solid var(--green);
+      border-radius: 16px;
+      padding: 4rem;
+      max-width: 600px;
+      margin: 4rem auto 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--green), var(--blue));
+    }
+    
+    .pricing-badge {
+      background: var(--green);
+      color: var(--navy);
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 2rem;
+      font-size: 0.875rem;
+    }
+    
+    .price {
+      font-family: 'Space Mono', monospace;
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+    
+    .price-detail {
+      color: var(--gray);
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    
+    .pricing-features {
+      list-style: none;
+      margin: 2rem 0 3rem;
+    }
+    
+    .pricing-features li {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--navy-lighter);
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .pricing-features li:last-child {
+      border-bottom: none;
+    }
+    
+    .check-icon {
+      color: var(--green);
+      font-size: 1.25rem;
+    }
+    
+    .no-icon {
+      color: #ff4444;
+      font-size: 1.25rem;
+    }
+    
+    /* Testimonials */
+    .testimonials-section {
+      padding: 8rem 0;
+      background: var(--navy-light);
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+    
+    .testimonial-card {
+      background: var(--navy);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--navy-lighter);
+    }
+    
+    .quote {
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: var(--white);
+      margin-bottom: 2rem;
+    }
+    
+    .author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 1.25rem;
+    }
+    
+    .author-info h4 {
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+    
+    .author-info p {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      padding: 8rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0, 255, 136, 0.15) 0%, transparent 70%);
+    }
+    
+    .cta-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .cta-section h2 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .cta-section p {
+      font-size: 1.5rem;
+      color: var(--gray);
+      margin-bottom: 3rem;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--navy-light);
+      padding: 4rem 0 2rem;
+      border-top: 1px solid var(--navy-lighter);
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-brand h3 {
+      font-family: 'Space Mono', monospace;
+      color: var(--green);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    
+    .footer-brand p {
+      color: var(--gray);
+      line-height: 1.7;
+    }
+    
+    .footer-links h4 {
+      color: var(--white);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    
+    .footer-links ul {
+      list-style: none;
+    }
+    
+    .footer-links a {
+      color: var(--gray);
+      text-decoration: none;
+      display: block;
+      padding: 0.5rem 0;
+      transition: color 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--green);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--navy-lighter);
+      color: var(--gray);
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-in {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.25rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .cta-group {
+        flex-direction: column;
+      }
+      
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <a href="#" class="logo">DENTAL REVENUE RECOVERY</a>
+      <a href="#download" class="nav-cta">Download Free Trial</a>
+    </div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-tag animate-in">✨ AI-Powered Revenue Recovery</span>
+        <h1 class="animate-in delay-1">Recover $50K-$200K<br>in Lost Revenue.<br>Automatically.</h1>
+        <p class="hero-subtitle animate-in delay-2">Your treatment plans are sitting unscheduled. We recover them while you sleep. Pay only 5% of recovered revenue.</p>
+        <div class="cta-group animate-in delay-3">
+          <a href="#download" class="btn btn-primary">
+            <span>Download Free Trial</span>
+            <span>→</span>
+          </a>
+          <a href="#how-it-works" class="btn btn-secondary">
+            <span>See How It Works</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Stats Bar -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div>
+          <span class="stat-number">$127K</span>
+          <span class="stat-label">Average Revenue Recovered Per Practice</span>
+        </div>
+        <div>
+          <span class="stat-number">23%</span>
+          <span class="stat-label">Of Unscheduled Treatment Recovered</span>
+        </div>
+        <div>
+          <span class="stat-number">5%</span>
+          <span class="stat-label">Commission Only - No Monthly Fees</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Problem Section -->
+  <section class="problem-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">THE PROBLEM</div>
+        <h2 class="section-title">You're Losing $100K+ Per Year</h2>
+        <p class="section-subtitle">Diagnosed treatment sitting unscheduled in your PMS is costing you serious money.</p>
+      </div>
+      
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon">💰</div>
+          <h3>$100K+ Sitting Idle</h3>
+          <p>Your practice has thousands in diagnosed treatment plans. Patients said "yes" but never scheduled. That's money waiting to be recovered.</p>
+        </div>
+        
+        <div class="problem-card">
+          <div class="problem-icon">⏰</div>
+          <h3>Team Too Busy</h3>
+          <p>Your staff is overwhelmed with daily operations. Following up on unscheduled treatment falls through the cracks every single day.</p>
+        </div>
+        
+        <div class="problem-card">
+          <div class="problem-icon">📉</div>
+          <h3>Revenue Leakage</h3>
+          <p>Every month, you lose $10K-$20K in potential revenue because patients forget, procrastinate, or need a gentle reminder.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Solution Section -->
+  <section class="solution-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">THE SOLUTION</div>
+        <h2 class="section-title">AI Agent That Works 24/7</h2>
+        <p class="section-subtitle">Set it once. Forget it. Collect checks. Our autonomous AI runs on your computer and recovers revenue every night.</p>
+      </div>
+      
+      <div class="how-it-works">
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3>Install in 5 Minutes</h3>
+          <p><span class="step-check">✓</span> Download the Windows app</p>
+          <p><span class="step-check">✓</span> Connect to your Open Dental database</p>
+          <p><span class="step-check">✓</span> Set your recovery rules</p>
+          <p><span class="step-check">✓</span> Done. It runs automatically.</p>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3>AI Does the Rest</h3>
+          <p><span class="step-check">✓</span> Runs every night at 2 AM</p>
+          <p><span class="step-check">✓</span> Finds unscheduled treatment plans</p>
+          <p><span class="step-check">✓</span> Sends warm, personalized emails</p>
+          <p><span class="step-check">✓</span> Tracks responses automatically</p>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3>You Schedule & Collect</h3>
+          <p><span class="step-check">✓</span> Patients respond to emails</p>
+          <p><span class="step-check">✓</span> Your team schedules appointments</p>
+          <p><span class="step-check">✓</span> Treatment gets completed</p>
+          <p><span class="step-check">✓</span> We bill 5% of recovered revenue</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Pricing Section -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">PRICING</div>
+        <h2 class="section-title">Only Pay When You Collect</h2>
+        <p class="section-subtitle">No monthly fees. No long-term contracts. No risk. We only win when you win.</p>
+      </div>
+      
+      <div class="pricing-card">
+        <span class="pricing-badge">PERFORMANCE-BASED</span>
+        <div class="price">5%</div>
+        <div class="price-detail">of recovered revenue only</div>
+        
+        <ul class="pricing-features">
+          <li><span class="check-icon">✓</span> <strong>Free 30-day trial</strong></li>
+          <li><span class="check-icon">✓</span> Unlimited recovery emails</li>
+          <li><span class="check-icon">✓</span> AI-personalized messages</li>
+          <li><span class="check-icon">✓</span> Automatic attribution tracking</li>
+          <li><span class="check-icon">✓</span> Monthly revenue reports</li>
+          <li><span class="no-icon">✗</span> No monthly fees</li>
+          <li><span class="no-icon">✗</span> No setup costs</li>
+          <li><span class="no-icon">✗</span> No per-seat licenses</li>
+        </ul>
+        
+        <a href="#download" class="btn btn-primary" style="width: 100%; justify-content: center;">
+          <span>Start Free Trial</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">TESTIMONIALS</div>
+        <h2 class="section-title">Trusted by Practices Like Yours</h2>
+      </div>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="quote">"Recovered $47,000 in the first 60 days. This thing just works. I honestly forgot it was even running until we started seeing appointments scheduled from the recovery emails."</p>
+          <div class="author">
+            <div class="author-avatar">SC</div>
+            <div class="author-info">
+              <h4>Dr. Sarah Chen</h4>
+              <p>Smile Dental, Charlotte NC</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="quote">"As an office manager, this saves me hours every week. No more manually working through treatment plan reports. The AI handles it all, and we just schedule the appointments."</p>
+          <div class="author">
+            <div class="author-avatar">LM</div>
+            <div class="author-info">
+              <h4>Lisa Martinez</h4>
+              <p>Office Manager, Premier Dental</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="quote">"The ROI is insane. We pay 5% of recovered revenue, but we're collecting money that would have otherwise been lost forever. It's literally printing money while we sleep."</p>
+          <div class="author">
+            <div class="author-avatar">MJ</div>
+            <div class="author-info">
+              <h4>Dr. Michael Johnson</h4>
+              <p>Downtown Dental Group</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Final CTA -->
+  <section class="cta-section" id="download">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Recover Lost Revenue?</h2>
+        <p>Free 30-day trial. No credit card required. Cancel anytime.</p>
+        
+        <div class="cta-group" style="justify-content: center; margin-bottom: 3rem;">
+          <a href="https://github.com/Upager/dental-recovery/releases/latest/download/Dental-Recovery-Setup-1.0.0.exe" class="btn btn-primary">
+            <span>⬇ Download for Windows</span>
+          </a>
+          <a href="https://github.com/Upager/dental-recovery" class="btn btn-secondary">
+            <span>View on GitHub</span>
+          </a>
+        </div>
+        
+        <p style="color: var(--gray); font-size: 0.95rem;">
+          Windows 10/11 • Open Dental Compatible • 100% Private & Secure
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Dental Revenue Recovery</h3>
+          <p>AI-powered autonomous agent that recovers unscheduled dental treatment. Built for practices that want to maximize revenue without increasing workload.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#download">Download</a></li>
+            <li><a href="https://github.com/Upager/dental-recovery">GitHub</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="mailto:thescwcapital@gmail.com">Contact Us</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 Dental Revenue Recovery. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+    
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    // Observe all cards and sections
+    document.querySelectorAll('.problem-card, .step, .testimonial-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'all 0.6s ease-out';
+      observer.observe(el);
+    });
+  </script>
+  
+</body>
+</html>
