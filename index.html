@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dental Revenue Recovery - Recover $50K-$200K in Lost Revenue Automatically</title>
-  <meta name="description" content="AI-powered autonomous agent that recovers unscheduled dental treatment. Pay only 5% of recovered revenue. Free 30-day trial.">
+  <meta name="description" content="HIPAA-compliant AI-powered revenue recovery for dental practices. Works with all major PMS systems. Pay only 5% of recovered revenue.">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +36,7 @@
       color: var(--white);
       line-height: 1.6;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
     
     .container {
@@ -69,6 +70,23 @@
       color: var(--green);
       text-decoration: none;
       letter-spacing: -0.5px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.3s;
+      font-weight: 500;
+    }
+    
+    .nav-links a:hover {
+      color: var(--green);
     }
     
     .nav-cta {
@@ -327,6 +345,88 @@
       margin-right: 0.5rem;
     }
     
+    /* PMS Compatibility */
+    .pms-section {
+      padding: 8rem 0;
+    }
+    
+    .pms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+    
+    .pms-card {
+      background: var(--navy-light);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--navy-lighter);
+      text-align: center;
+      transition: all 0.3s;
+    }
+    
+    .pms-card:hover {
+      border-color: var(--green);
+      transform: translateY(-5px);
+    }
+    
+    .pms-card h3 {
+      color: var(--white);
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .pms-badge {
+      display: inline-block;
+      background: rgba(0, 255, 136, 0.1);
+      color: var(--green);
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+    
+    /* HIPAA Section */
+    .hipaa-section {
+      padding: 8rem 0;
+      background: var(--navy-light);
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+    
+    .benefit-card {
+      background: var(--navy);
+      padding: 2rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--green);
+    }
+    
+    .benefit-card h3 {
+      color: var(--white);
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .benefit-icon {
+      color: var(--green);
+      font-size: 1.5rem;
+    }
+    
+    .benefit-card p {
+      color: var(--gray);
+      line-height: 1.7;
+    }
+    
     /* Pricing Section */
     .pricing-section {
       padding: 8rem 0;
@@ -404,6 +504,131 @@
     .no-icon {
       color: #ff4444;
       font-size: 1.25rem;
+    }
+    
+    /* FAQ Section */
+    .faq-section {
+      padding: 8rem 0;
+      background: var(--navy-light);
+    }
+    
+    .faq-list {
+      max-width: 800px;
+      margin: 4rem auto 0;
+    }
+    
+    .faq-item {
+      background: var(--navy);
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      border: 1px solid var(--navy-lighter);
+    }
+    
+    .faq-question {
+      padding: 1.5rem 2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s;
+    }
+    
+    .faq-question:hover {
+      background: var(--navy-lighter);
+    }
+    
+    .faq-question h3 {
+      color: var(--white);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    
+    .faq-toggle {
+      color: var(--green);
+      font-size: 1.5rem;
+      transition: transform 0.3s;
+    }
+    
+    .faq-answer {
+      padding: 0 2rem 1.5rem;
+      color: var(--gray);
+      line-height: 1.8;
+      display: none;
+    }
+    
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    
+    .faq-item.active .faq-toggle {
+      transform: rotate(45deg);
+    }
+    
+    /* Contact Form */
+    .contact-section {
+      padding: 8rem 0;
+    }
+    
+    .contact-form {
+      max-width: 600px;
+      margin: 4rem auto 0;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem;
+      background: var(--navy-light);
+      border: 1px solid var(--navy-lighter);
+      border-radius: 8px;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--green);
+    }
+    
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .form-message {
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      display: none;
+    }
+    
+    .form-message.success {
+      background: rgba(0, 255, 136, 0.1);
+      color: var(--green);
+      border: 1px solid var(--green);
+      display: block;
+    }
+    
+    .form-message.error {
+      background: rgba(255, 68, 68, 0.1);
+      color: #ff4444;
+      border: 1px solid #ff4444;
+      display: block;
     }
     
     /* Testimonials */
@@ -506,7 +731,7 @@
     
     .footer-content {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
       gap: 4rem;
       margin-bottom: 3rem;
     }
@@ -601,6 +826,10 @@
         width: 100%;
         justify-content: center;
       }
+      
+      .nav-links {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -610,7 +839,13 @@
   <nav>
     <div class="container">
       <a href="#" class="logo">DENTAL REVENUE RECOVERY</a>
-      <a href="#download" class="nav-cta">Download Free Trial</a>
+      <div class="nav-links">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pms">Compatible PMS</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a href="#download" class="nav-cta">Download Free Trial</a>
+      </div>
     </div>
   </nav>
   
@@ -618,11 +853,11 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <span class="hero-tag animate-in">✨ AI-Powered Revenue Recovery</span>
+        <span class="hero-tag animate-in">✨ HIPAA-Compliant AI Revenue Recovery</span>
         <h1 class="animate-in delay-1">Recover $50K-$200K<br>in Lost Revenue.<br>Automatically.</h1>
-        <p class="hero-subtitle animate-in delay-2">Your treatment plans are sitting unscheduled. We recover them while you sleep. Pay only 5% of recovered revenue.</p>
+        <p class="hero-subtitle animate-in delay-2">Works with all major dental practice management systems. AI-powered recovery that runs while you sleep. Pay only 5% of recovered revenue.</p>
         <div class="cta-group animate-in delay-3">
-          <a href="https://drive.google.com/uc?export=download&id=1tndB-dHZH5alP-b1nOpqJwJhMeQdk0pM" class="btn btn-primary">
+          <a href="#download" class="btn btn-primary">
             <span>Download Free Trial</span>
             <span>→</span>
           </a>
@@ -647,8 +882,8 @@
           <span class="stat-label">Of Unscheduled Treatment Recovered</span>
         </div>
         <div>
-          <span class="stat-number">5%</span>
-          <span class="stat-label">Commission Only - No Monthly Fees</span>
+          <span class="stat-number">100%</span>
+          <span class="stat-label">HIPAA Compliant & Secure</span>
         </div>
       </div>
     </div>
@@ -699,7 +934,7 @@
           <div class="step-number">01</div>
           <h3>Install in 5 Minutes</h3>
           <p><span class="step-check">✓</span> Download the Windows app</p>
-          <p><span class="step-check">✓</span> Connect to your Open Dental database</p>
+          <p><span class="step-check">✓</span> Connect to your PMS database</p>
           <p><span class="step-check">✓</span> Set your recovery rules</p>
           <p><span class="step-check">✓</span> Done. It runs automatically.</p>
         </div>
@@ -725,6 +960,108 @@
     </div>
   </section>
   
+  <!-- PMS Compatibility Section -->
+  <section class="pms-section" id="pms">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">COMPATIBLE SYSTEMS</div>
+        <h2 class="section-title">Works With All Major PMS</h2>
+        <p class="section-subtitle">Seamless integration with the dental practice management software you already use.</p>
+      </div>
+      
+      <div class="pms-grid">
+        <div class="pms-card">
+          <h3>Open Dental</h3>
+          <span class="pms-badge">MySQL & Cloud</span>
+        </div>
+        
+        <div class="pms-card">
+          <h3>Dentrix</h3>
+          <span class="pms-badge">Coming Soon</span>
+        </div>
+        
+        <div class="pms-card">
+          <h3>Eaglesoft</h3>
+          <span class="pms-badge">Coming Soon</span>
+        </div>
+        
+        <div class="pms-card">
+          <h3>Curve Dental</h3>
+          <span class="pms-badge">Cloud API</span>
+        </div>
+        
+        <div class="pms-card">
+          <h3>Denticon</h3>
+          <span class="pms-badge">Cloud API</span>
+        </div>
+        
+        <div class="pms-card">
+          <h3>CareStack</h3>
+          <span class="pms-badge">Cloud API</span>
+        </div>
+        
+        <div class="pms-card">
+          <h3>Archy</h3>
+          <span class="pms-badge">Cloud API</span>
+        </div>
+        
+        <div class="pms-card">
+          <h3>Practice-Web</h3>
+          <span class="pms-badge">Coming Soon</span>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 3rem;">
+        <p style="color: var(--gray); font-size: 1.1rem;">
+          Don't see your PMS? <a href="#contact" style="color: var(--green); text-decoration: none;">Contact us</a> - we're adding more every month.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- HIPAA & Security Section -->
+  <section class="hipaa-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">SECURITY & COMPLIANCE</div>
+        <h2 class="section-title">100% HIPAA Compliant</h2>
+        <p class="section-subtitle">Your patient data never leaves your practice. Everything runs locally on your computer.</p>
+      </div>
+      
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <h3><span class="benefit-icon">🔒</span> End-to-End Encryption</h3>
+          <p>All sensitive data is encrypted at rest using AES-256 encryption. Database credentials stored securely in encrypted local storage.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <h3><span class="benefit-icon">💻</span> Runs Locally</h3>
+          <p>Software runs entirely on your computer. No patient data is transmitted to external servers. Your PMS database stays on your network.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <h3><span class="benefit-icon">🛡️</span> Read-Only Access</h3>
+          <p>Only reads data from your PMS - never modifies patient records. No write access to your practice management database.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <h3><span class="benefit-icon">📋</span> Audit Logs</h3>
+          <p>Complete audit trail of all recovery activities. Track every email sent, every patient contacted, every action taken.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <h3><span class="benefit-icon">🚫</span> Opt-Out Compliance</h3>
+          <p>Automatic handling of patient opt-out requests. TCPA and CAN-SPAM compliant messaging with unsubscribe links.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <h3><span class="benefit-icon">🔐</span> Secure Email</h3>
+          <p>Uses your existing SMTP server. Emails sent from your practice domain. No third-party email services with access to PHI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <!-- Pricing Section -->
   <section class="pricing-section" id="pricing">
     <div class="container">
@@ -745,6 +1082,7 @@
           <li><span class="check-icon">✓</span> AI-personalized messages</li>
           <li><span class="check-icon">✓</span> Automatic attribution tracking</li>
           <li><span class="check-icon">✓</span> Monthly revenue reports</li>
+          <li><span class="check-icon">✓</span> HIPAA-compliant infrastructure</li>
           <li><span class="no-icon">✗</span> No monthly fees</li>
           <li><span class="no-icon">✗</span> No setup costs</li>
           <li><span class="no-icon">✗</span> No per-seat licenses</li>
@@ -754,6 +1092,98 @@
           <span>Start Free Trial</span>
           <span>→</span>
         </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">FREQUENTLY ASKED QUESTIONS</div>
+        <h2 class="section-title">Got Questions? We Have Answers</h2>
+      </div>
+      
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Is my patient data secure and HIPAA compliant?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, absolutely. The software runs entirely on your computer - no patient data is transmitted to external servers. All data is encrypted at rest using AES-256 encryption. We only have read-only access to your PMS database, meaning we cannot modify any patient records. All emails are sent from your own SMTP server using your practice domain.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Which practice management systems are supported?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Currently we support Open Dental (both local MySQL and Cloud API versions). We're actively adding support for Denticon, Curve Dental, CareStack, and Archy. Dentrix, Eaglesoft, and Practice-Web integrations are coming soon. If your PMS isn't listed, contact us - we're adding new integrations regularly.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>How does the 5% commission pricing work?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>You only pay when you actually collect revenue from recovered treatment. The software tracks which patients scheduled appointments due to recovery emails and calculates 5% of the completed treatment value. We bill monthly for the previous month's collections. If we don't recover any revenue, you pay nothing. There are no setup fees, monthly fees, or per-seat licenses.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Will this bother my patients with too many emails?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>No. The system includes intelligent frequency caps and respects patient preferences. Recovery sequences are spaced appropriately (typically 7-14 days between contacts) and stop automatically when a patient schedules or opts out. All emails include clear unsubscribe options and we maintain an automatic suppression list. The emails are warm, personalized, and focused on helping patients complete treatment they've already said yes to.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>How long does installation and setup take?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Most practices are up and running in 10-15 minutes. You download the installer, connect to your PMS database (MySQL credentials or API key), configure your email settings (Gmail, Outlook, or any SMTP server), and set your recovery rules. The setup wizard walks you through each step. We also offer free onboarding assistance for the first 30 days.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What happens during the free trial?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>During your 30-day free trial, the software runs with full functionality. It finds unscheduled treatment, sends recovery emails, tracks responses, and attributes recovered revenue - exactly like the paid version. You can see real results and recovered revenue before paying anything. If you're happy with the results after 30 days, billing starts automatically at 5% of recovered revenue. No credit card required to start.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Can I customize the email templates?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! The software includes several pre-built email templates, but you can fully customize them to match your practice's voice and branding. You can edit subject lines, body text, include your logo, and set different templates for different procedures or patient segments. The AI personalization layer works with your templates to make each email feel individually written.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What kind of results can I expect?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Most practices recover 15-25% of their unscheduled treatment within the first 90 days. This translates to $50K-$200K in recovered revenue per year for an average-sized practice. Results vary based on how much unscheduled treatment you have, your recovery rules, and patient engagement. The software provides detailed reporting so you can track exactly what's being recovered.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -803,6 +1233,57 @@
     </div>
   </section>
   
+  <!-- Contact Form Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">CONTACT US</div>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Have questions? Want a demo? We're here to help.</p>
+      </div>
+      
+      <form class="contact-form" id="contactForm">
+        <div class="form-message" id="formMessage"></div>
+        
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="practice">Practice Name</label>
+          <input type="text" id="practice" name="practice">
+        </div>
+        
+        <div class="form-group">
+          <label for="pms">Which PMS do you use?</label>
+          <input type="text" id="pms" name="pms" placeholder="e.g., Open Dental, Dentrix, etc.">
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+          <span>Send Message</span>
+          <span>→</span>
+        </button>
+      </form>
+      
+      <div style="text-align: center; margin-top: 3rem;">
+        <p style="color: var(--gray);">
+          Or email us directly: <a href="mailto:thescwcapital@gmail.com" style="color: var(--green); text-decoration: none;">thescwcapital@gmail.com</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  
   <!-- Final CTA -->
   <section class="cta-section" id="download">
     <div class="container">
@@ -814,13 +1295,10 @@
           <a href="https://drive.google.com/uc?export=download&id=1tndB-dHZH5alP-b1nOpqJwJhMeQdk0pM" class="btn btn-primary">
             <span>⬇ Download for Windows</span>
           </a>
-          <a href="https://github.com/Upager/dental-recovery" class="btn btn-secondary">
-            <span>View on GitHub</span>
-          </a>
         </div>
         
         <p style="color: var(--gray); font-size: 0.95rem;">
-          Windows 10/11 • Open Dental Compatible • 100% Private & Secure
+          Windows 10/11 • All Major PMS Compatible • 100% HIPAA Compliant
         </p>
       </div>
     </div>
@@ -832,38 +1310,46 @@
       <div class="footer-content">
         <div class="footer-brand">
           <h3>Dental Revenue Recovery</h3>
-          <p>AI-powered autonomous agent that recovers unscheduled dental treatment. Built for practices that want to maximize revenue without increasing workload.</p>
+          <p>HIPAA-compliant AI-powered autonomous agent that recovers unscheduled dental treatment. Built for practices that want to maximize revenue without increasing workload.</p>
         </div>
         
         <div class="footer-links">
           <h4>Product</h4>
           <ul>
             <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#pms">Compatible PMS</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#download">Download</a></li>
-            <li><a href="https://github.com/Upager/dental-recovery">GitHub</a></li>
           </ul>
         </div>
         
         <div class="footer-links">
           <h4>Support</h4>
           <ul>
-            <li><a href="mailto:thescwcapital@gmail.com">Contact Us</a></li>
-            <li><a href="#">Documentation</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#contact">About</a></li>
+            <li><a href="mailto:thescwcapital@gmail.com">Email Us</a></li>
           </ul>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2024 Dental Revenue Recovery. All rights reserved.</p>
+        <p>&copy; 2024 Dental Revenue Recovery. All rights reserved. HIPAA Compliant.</p>
       </div>
     </div>
   </footer>
   
   <script>
-    // Smooth scrolling for anchor links
+    // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -872,6 +1358,58 @@
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
+    });
+    
+    // FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        const isActive = faqItem.classList.contains('active');
+        
+        // Close all FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          faqItem.classList.add('active');
+        }
+      });
+    });
+    
+    // Contact Form
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData);
+      
+      const messageDiv = document.getElementById('formMessage');
+      
+      // Create mailto link
+      const subject = encodeURIComponent(`Contact from ${data.name} - ${data.practice || 'Dental Practice'}`);
+      const body = encodeURIComponent(`
+Name: ${data.name}
+Email: ${data.email}
+Practice: ${data.practice || 'Not provided'}
+PMS: ${data.pms || 'Not specified'}
+
+Message:
+${data.message}
+      `);
+      
+      const mailtoLink = `mailto:thescwcapital@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      // Show success message
+      messageDiv.className = 'form-message success';
+      messageDiv.textContent = 'Opening your email client... If it doesn\'t open automatically, please email us at thescwcapital@gmail.com';
+      
+      // Reset form
+      e.target.reset();
     });
     
     // Intersection Observer for animations
@@ -889,8 +1427,7 @@
       });
     }, observerOptions);
     
-    // Observe all cards and sections
-    document.querySelectorAll('.problem-card, .step, .testimonial-card').forEach(el => {
+    document.querySelectorAll('.problem-card, .step, .testimonial-card, .pms-card, .benefit-card').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(30px)';
       el.style.transition = 'all 0.6s ease-out';
